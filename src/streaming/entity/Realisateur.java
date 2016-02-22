@@ -19,6 +19,7 @@ import javax.persistence.ManyToMany;
 /**
  *
  * @author admin
+ * entité réalisateur
  */
 @Entity
 public class Realisateur implements Serializable {
