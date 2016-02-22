@@ -24,7 +24,7 @@ import javax.persistence.OneToMany;
  * @author admin
  */
 @Entity
-//entité gérant les films
+//entité gérant les films bla
 public class Film implements Serializable {
 
     private static final long serialVersionUID = 1L;
