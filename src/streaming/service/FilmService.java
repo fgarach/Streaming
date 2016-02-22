@@ -8,17 +8,38 @@ package streaming.service;
 import java.util.List;
 import streaming.dao.FilmDAO;
 import streaming.entity.Film;
+import streaming.exception.SynopsisVideOuNullException;
 
 /**
  *
  * @author admin
  */
 public class FilmService {
-    
+
     private FilmDAO fDao = new FilmDAO();
-    
-    public void ajouter(Film f) {
-        fDao.ajouter(f);
+
+    private boolean SynopsysEstNulOuVide(Film f) {
+
+        boolean videOuNull = false;
+
+        if (f.getSynopsis() == null || f.getSynopsis().isEmpty()) {
+            System.out.println("coucou");
+            videOuNull = true;
+        }
+
+        return videOuNull;
+    }
+
+    public void ajouter(Film f) throws SynopsisVideOuNullException {
+        if (SynopsysEstNulOuVide(f)) {
+            throw new SynopsisVideOuNullException();
+        }
+
+        f.setTitre(f.getTitre().replaceAll("zut", "flute"));
+
+        f.setSynopsis(f.getSynopsis().replaceAll("zut", "flute"));
+
+        //fDao.ajouter(f);
     }
 
     public void supprimer(Long id) {
@@ -27,16 +48,24 @@ public class FilmService {
 
     public void modifier(Film f) {
         fDao.modifier(f);
-                
+
     }
 
     public Film rechercherParId(Long id) {
-       return fDao.rechercherParId(id);
+        return fDao.rechercherParId(id);
     }
 
     public List<Film> listerTous() {
         return fDao.listerTous();
 
     }
-    
+
+    public List<Film> listerParGenre(String genre) {
+        return fDao.listerParGenre(genre);
+    }
+
+    public List<Film> listerParPays(String pays) {
+        return fDao.listerParPays(pays);
+    }
+
 }
