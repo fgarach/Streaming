@@ -20,7 +20,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 /**
- * je suis passé par la ou pas
+ * je suis passé par la
  * @author admin
  */
 @Entity
