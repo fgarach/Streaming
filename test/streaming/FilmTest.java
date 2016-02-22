@@ -487,11 +487,11 @@ public class FilmTest {
             System.out.println(r.getNom() + " " + r.getPrenom() +" : " + nombre);
             
         }
-//       
-//            System.out.println(f.getTitre());
-//        }
  
     }
+    
+    
+    
     
 }
     
