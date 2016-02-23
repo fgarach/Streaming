@@ -38,7 +38,7 @@ public class FilmService {
 
         f.setSynopsis(f.getSynopsis().replaceAll("zut", "flute"));
 
-        //fDao.ajouter(f);
+        fDao.ajouter(f);
     }
 
     public void supprimer(Long id) {

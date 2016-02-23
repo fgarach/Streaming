@@ -166,6 +166,7 @@ public class FilmTest {
             f1.setId(1L);
             f1.setTitre("Django Unchained");
             f1.setAnnee(2012L);
+            f1.setSynopsis("e film commence dans le Texas, en 1858, où une file d'esclaves enchaînés avance péniblement sous la garde des frères Ace et Dicky Speck. ");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -185,6 +186,7 @@ public class FilmTest {
             f1.setId(2L);
             f1.setTitre("Kill Bill");
             f1.setAnnee(2003L);
+            f1.setSynopsis("Dans la petite chapelle de Two Pines perdue au milieu du désert, des assassins surgissent et tirent impitoyablement et sans raison apparente sur toutes les personnes présentes.");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -203,6 +205,7 @@ public class FilmTest {
             f1.setId(3L);
             f1.setTitre("Kill Bill 2");
             f1.setAnnee(2004L);
+            f1.setSynopsis("Après s'être débarrassée de ses anciennes collègues Vernita Green et O-Ren Ishii, la Mariée poursuit sa quête vengeresse. Il lui reste à régler le sort de Budd puis de Elle Driver avant d'atteindre le but ultime : tuer Bill.");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -221,6 +224,7 @@ public class FilmTest {
             f1.setId(4L);
             f1.setTitre("Jackie Brown");
             f1.setAnnee(1997L);
+            f1.setSynopsis("Jacqueline « Jackie » Brown (Pam Grier) est une hôtesse de l'air dans une petite compagnie mexicaine. Pour arrondir ses fins de mois, elle sert de passeuse du Mexique aux États-Unis pour un trafiquant d'armes, Ordell Robbie (Samuel L. Jackson).");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -238,6 +242,7 @@ public class FilmTest {
             f1.setId(5L);
             f1.setTitre("Sin City");
             f1.setAnnee(2005L);
+            f1.setSynopsis("Sin City est une ville infestée de criminels, de flics ripoux et de femmes fatales. Hartigan s'est juré de protéger Nancy, une strip-teaseuse qui l'a fait craquer. ");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -255,6 +260,7 @@ public class FilmTest {
             f1.setId(6L);
             f1.setTitre("Bad Taste");
             f1.setAnnee(1987L);
+            f1.setSynopsis("Une petite ville côtière de Nouvelle-Zélande est le théâtre d'une invasion extraterrestre : les aliens ont effet décidé d'utiliser les habitants comme viande de première qualité pour leur fast-food spatial...");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -272,6 +278,7 @@ public class FilmTest {
             f1.setId(7L);
             f1.setTitre("Brainded");
             f1.setAnnee(1992L);
+            f1.setSynopsis("Lionel Cosgrove, un jeune homme timide flanqué d'une mère envahissante fait la connaissance de la belle Paquita, dont il tombe amoureux. Ce qui n'est pas du goût de sa chère maman, bien décidée à gâcher cette relation. ");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -289,6 +296,7 @@ public class FilmTest {
             f1.setId(8L);
             f1.setTitre("Le Hobbit");
             f1.setAnnee(2015L);
+            f1.setSynopsis("Dans UN VOYAGE INATTENDU, Bilbon Sacquet cherche à reprendre le Royaume perdu des Nains d'Erebor, conquis par le redoutable dragon Smaug.");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -306,6 +314,7 @@ public class FilmTest {
             f1.setId(9L);
             f1.setTitre("Polisse");
             f1.setAnnee(2011L);
+            f1.setSynopsis("Le quotidien des policiers de la BPM (Brigade de Protection des Mineurs) ce sont les gardes à vue de pédophiles, les arrestations de pickpockets mineurs mais aussi la pause déjeuner où l’on se raconte ses problèmes de couple ;");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -324,6 +333,7 @@ public class FilmTest {
             f1.setId(10L);
             f1.setTitre("Big Lebowski");
             f1.setAnnee(1998L);
+            f1.setSynopsis("Jeff Lebowski, prénommé le Duc, est un paresseux qui passe son temps à boire des coups avec son copain Walter et à jouer au bowling, jeu dont il est fanatique. Un jour deux malfrats le passent à tabac.");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -344,6 +354,7 @@ public class FilmTest {
             f1.setId(11L);
             f1.setTitre("Ave Cesar");
             f1.setAnnee(2016L);
+            f1.setSynopsis("La folle journée d’Eddie Mannix va nous entraîner dans les coulisses d’un grand studio Hollywoodien.");
             f1.setGenreDuFilm(g);// Genre
             g.getFilmDuGenre().add(f1);
             f1.setPaysDOrigineDuFilm(p);// Pays          
@@ -391,7 +402,7 @@ public class FilmTest {
 
         }
     }
-// @Test
+ @Test
 
     public void testFilmOrdreChrono() {
 
@@ -521,7 +532,7 @@ public class FilmTest {
 
     }
 
-    @Test
+    //@Test
     public void testListPourChaqRealNbrFilmTriéParOR13() {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
         Collection<Object[]> films = em.createQuery("SELECT r, COUNT(f) AS total FROM Realisateur r JOIN r.filmDeRealisateur f GROUP BY r ORDER BY total ").getResultList();
