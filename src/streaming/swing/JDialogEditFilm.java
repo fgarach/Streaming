@@ -207,6 +207,11 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         getContentPane().add(jPanel4);
 
         jComboBoxPays.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxPays.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBoxPaysActionPerformed(evt);
+            }
+        });
         getContentPane().add(jComboBoxPays);
 
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -287,6 +292,10 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         }catch(SynopsisVideOuNullException e){}
 
     }//GEN-LAST:event_jButtonAjouterActionPerformed
+
+    private void jComboBoxPaysActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBoxPaysActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBoxPaysActionPerformed
 
     /**
      * @param args the command line arguments

@@ -5,28 +5,26 @@
  */
 package streaming.swing;
 
-import streaming.service.GenreService;
+import streaming.service.SerieService;
 
 /**
  *
  * @author admin
  */
-public class JPanelListGenre extends javax.swing.JPanel {
+public class JPanelListSerie extends javax.swing.JPanel {
     
-    GenreService gServ = new GenreService();
+    private SerieService sServ = new SerieService();
     
     public void rafraichiJTable(){
         
-        jTableGenre.setModel(new TableModelListGenre());
-        jTableGenre.repaint();
+        jTableSerie.setModel(new TableModelListSerie());
+        jTableSerie.repaint();
     }
 
     /**
-     * Creates new form JPanelListGenre
+     * Creates new form JPanelListSerie
      */
-    
-    
-    public JPanelListGenre() {
+    public JPanelListSerie() {
         initComponents();
         rafraichiJTable();
     }
@@ -44,13 +42,13 @@ public class JPanelListGenre extends javax.swing.JPanel {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTableGenre = new javax.swing.JTable();
+        jTableSerie = new javax.swing.JTable();
 
         setLayout(new java.awt.BorderLayout());
 
         jToolBar1.setRollover(true);
 
-        jButton1.setText("Ajouter genre");
+        jButton1.setText("Ajouter serie");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -61,7 +59,7 @@ public class JPanelListGenre extends javax.swing.JPanel {
         });
         jToolBar1.add(jButton1);
 
-        jButton2.setText("Supprimer genre");
+        jButton2.setText("Supprimer serie");
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
@@ -72,9 +70,9 @@ public class JPanelListGenre extends javax.swing.JPanel {
         });
         jToolBar1.add(jButton2);
 
-        add(jToolBar1, java.awt.BorderLayout.NORTH);
+        add(jToolBar1, java.awt.BorderLayout.PAGE_START);
 
-        jTableGenre.setModel(new javax.swing.table.DefaultTableModel(
+        jTableSerie.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -85,35 +83,36 @@ public class JPanelListGenre extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTableGenre);
+        jScrollPane1.setViewportView(jTableSerie);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JDialogGenre dialog = new JDialogGenre(null, true,this);
-        
-        dialog.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        int i = jTableGenre.getSelectedRow();
+               
+        int i = jTableSerie.getSelectedRow();
         if (i == -1){
             return;
         }
         
-        long Id = (long) jTableGenre.getValueAt(i,0);
-        gServ.supprimer(Id);
+        long Id = (long) jTableSerie.getValueAt(i,0);
+        sServ.supprimer(Id);
         
         rafraichiJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialogSerie dialog = new JDialogSerie(null, true,this);
+        
+        dialog.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTableGenre;
+    private javax.swing.JTable jTableSerie;
     private javax.swing.JToolBar jToolBar1;
     // End of variables declaration//GEN-END:variables
 }
