@@ -72,6 +72,16 @@ public class Realisateur implements Serializable {
     public Long getId() {
         return id;
     }
+
+    public Realisateur() {
+    }
+
+    public Realisateur(String nom, String prenom) {
+        this.nom = nom;
+        this.prenom = prenom;
+    }
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

@@ -98,6 +98,11 @@ public class JFramePrincipale extends javax.swing.JFrame {
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jToolBar1.add(jButton5);
 
         getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
@@ -129,6 +134,12 @@ public class JFramePrincipale extends javax.swing.JFrame {
         jpCentral = new JPanelListSerie();
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        supprimePanneaux();
+        jpCentral = new JPanelListRealisateur();
+        add(jpCentral, BorderLayout.CENTER);
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments

@@ -119,8 +119,7 @@ public class Film implements Serializable {
     public Film() {
     }
 
-    public Film(Long id, Genre genreDuFilm, Pays paysDOrigineDuFilm, String titre, String synopsis, Long annee) {
-        this.id = id;
+    public Film(Genre genreDuFilm, Pays paysDOrigineDuFilm, String titre, String synopsis, Long annee) {
         this.genreDuFilm = genreDuFilm;
         this.paysDOrigineDuFilm = paysDOrigineDuFilm;
         this.titre = titre;

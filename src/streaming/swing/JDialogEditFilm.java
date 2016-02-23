@@ -60,7 +60,6 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     public JDialogEditFilm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        rafraichirListPaysGenre();
         initialiserComboBoxPays();
         initialiserComboBoxGenre();
     }
@@ -68,6 +67,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     public JDialogEditFilm(java.awt.Frame parent, boolean modal, JPanelListFilm jplf) {
         super(parent, modal);
         initComponents();
+        rafraichirListPaysGenre();
         initialiserComboBoxPays();
         initialiserComboBoxGenre();
 
@@ -94,8 +94,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         jTextFieldAnnee = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextAreaSynopsis = new javax.swing.JTextArea();
+        jTextFieldSynopsis = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jComboBoxPays = new javax.swing.JComboBox<>();
@@ -182,12 +181,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
 
         getContentPane().add(jPanel8);
-
-        jTextAreaSynopsis.setColumns(20);
-        jTextAreaSynopsis.setRows(5);
-        jScrollPane1.setViewportView(jTextAreaSynopsis);
-
-        getContentPane().add(jScrollPane1);
+        getContentPane().add(jTextFieldSynopsis);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Pays");
@@ -286,10 +280,14 @@ public class JDialogEditFilm extends javax.swing.JDialog {
             }
         }
 
-        Film f = new Film(Long.parseLong(jTextFieldIdFilm.getText()), genre, pays , jTextFieldTitre.getText(), jTextAreaSynopsis.getText(), Long.parseLong(jTextFieldAnnee.getText()));
+        Film f = new Film(genre, pays , jTextFieldTitre.getText(), jTextFieldSynopsis.getText(), Long.parseLong(jTextFieldAnnee.getText()));
         try{
             fServ.ajouter(f);
         }catch(SynopsisVideOuNullException e){}
+        
+        jplf.rafraichitJTable();
+        this.setVisible(false);
+        this.dispose();
 
     }//GEN-LAST:event_jButtonAjouterActionPerformed
 
@@ -357,10 +355,9 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextAreaSynopsis;
     private javax.swing.JTextField jTextFieldAnnee;
     private javax.swing.JTextField jTextFieldIdFilm;
+    private javax.swing.JTextField jTextFieldSynopsis;
     private javax.swing.JTextField jTextFieldTitre;
     // End of variables declaration//GEN-END:variables
 }
