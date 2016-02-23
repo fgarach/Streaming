@@ -5,6 +5,7 @@
  */
 package streaming;
 
+import java.util.List;
 import org.junit.Test;
 import static org.junit.Assert.*;
 import streaming.entity.Film;
@@ -19,7 +20,7 @@ public class TestModeration {
     
     FilmService fs = new FilmService();
     
-    @Test
+   // @Test
     public void testAjoutFilm() throws SynopsisVideOuNullException{
         Film f = new Film();
         f.setId(1L);
@@ -28,6 +29,16 @@ public class TestModeration {
 
         fs.ajouter(f);
      
+    }
+    @Test
+    public void testListerParTitreOuReal(){
+        FilmService fs = new FilmService();
+        List<Film> list=fs.listerParTitreOuReal("Jackson");
+        System.out.println(list.size());
+        
+        for(Film f : list){
+            System.out.println(f.getTitre());
+        }
     }
 
 }
