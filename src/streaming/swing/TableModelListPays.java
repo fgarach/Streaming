@@ -16,13 +16,13 @@ import streaming.service.PaysService;
  *
  * @author admin
  */
-public class TableModelListePays extends DefaultTableModel{
+public class TableModelListPays extends DefaultTableModel{
     
     private List<Pays> pays = null;
     private int nbPays = 0;
     PaysService pServ = new PaysService();
     
-    public TableModelListePays(){
+    public TableModelListPays(){
 
         setColumnIdentifiers(new String[]{"ID","Pays"});
         pays = pServ.listerTous();

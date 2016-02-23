@@ -15,7 +15,8 @@ import streaming.service.PaysService;
 public class JPanelListPays extends javax.swing.JPanel {
     
     public void rafraichiJTable(){
-        jTablePays.setModel(new TableModelListePays());
+        
+        jTablePays.setModel(new TableModelListPays());
         jTablePays.repaint();
     }
 
@@ -24,6 +25,7 @@ public class JPanelListPays extends javax.swing.JPanel {
      */
     public JPanelListPays() {
         initComponents();
+        rafraichiJTable();
     }
 
     /**
@@ -40,6 +42,8 @@ public class JPanelListPays extends javax.swing.JPanel {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTablePays = new javax.swing.JTable();
+
+        setLayout(new java.awt.BorderLayout());
 
         jToolBar1.setRollover(true);
 
@@ -65,6 +69,8 @@ public class JPanelListPays extends javax.swing.JPanel {
         });
         jToolBar1.add(jButton2);
 
+        add(jToolBar1, java.awt.BorderLayout.NORTH);
+
         jTablePays.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null},
@@ -77,39 +83,29 @@ public class JPanelListPays extends javax.swing.JPanel {
         ));
         jScrollPane1.setViewportView(jTablePays);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 58, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JDialog dialog = new JDialogPays(null, true);
+        JDialogPays dialog = new JDialogPays(null, true,this);
+        
+        dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         PaysService pServ = new PaysService();
         
         int i = jTablePays.getSelectedRow();
-         
+        System.out.println("i:" +i);
         if (i == -1){
             return;
         }
         
         long Id = (long) jTablePays.getValueAt(i,0);
-        
+        System.out.println("   Id:" + Id);
         pServ.supprimer(Id);
+        
+        rafraichiJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
