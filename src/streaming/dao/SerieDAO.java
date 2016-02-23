@@ -15,7 +15,7 @@ import streaming.entity.Serie;
  * @author admin
  */
 public class SerieDAO {
-    
+
     public void ajouter(Serie s) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
         em.getTransaction().begin();
@@ -48,5 +48,18 @@ public class SerieDAO {
         return em.createQuery("SELECT s FROM Serie s").getResultList();
 
     }
-    
+
+
+    public List<Serie> listerParPays(Long idPays) {
+        EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
+        return em.createQuery("SELECT s FROM Serie s WHERE s.paysDOrigineDeLaSerie" + idPays + "'").getResultList();
+
+    }
+
+    public List<Serie> listerParTitre(String str) {
+        EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
+        return em.createQuery("SELECT s FROM Serie s WHERE s.titre LIKE '%" + str + "%' AND ").getResultList();
+
+    }
+
 }

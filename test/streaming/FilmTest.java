@@ -21,6 +21,7 @@ import streaming.entity.Pays;
 import streaming.entity.Realisateur;
 import streaming.entity.Saison;
 import streaming.entity.Serie;
+import streaming.exception.SynopsisVideOuNullException;
 import streaming.service.DBService;
 import streaming.service.EpisodeService;
 import streaming.service.FilmService;
@@ -39,7 +40,7 @@ import streaming.service.SerieService;
 public class FilmTest {
 
     @Before
-    public void before() {
+    public void before() throws SynopsisVideOuNullException {
         DBService dServ = new DBService();
         GenreService gServ = new GenreService();
         PaysService pServ = new PaysService();

@@ -23,7 +23,6 @@ public class FilmService {
         boolean videOuNull = false;
 
         if (f.getSynopsis() == null || f.getSynopsis().isEmpty()) {
-            System.out.println("coucou");
             videOuNull = true;
         }
 
@@ -60,12 +59,16 @@ public class FilmService {
 
     }
 
-    public List<Film> listerParGenre(String genre) {
-        return fDao.listerParGenre(genre);
+    public List<Film> listerParGenre(Long idGenre) {
+        return fDao.listerParGenre(idGenre);
     }
 
-    public List<Film> listerParPays(String pays) {
-        return fDao.listerParPays(pays);
+    public List<Film> listerParPays(Long idPpays) {
+        return fDao.listerParPays(idPpays);
+    }
+
+    public List<Film> listerParTitreOuReal(String str) {
+        return fDao.listerParTitreOuReal(str);
     }
 
 }
