@@ -15,6 +15,7 @@ import streaming.entity.Film;
  * @author admin
  */
 public class FilmDAO {
+
     public void ajouter(Film f) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
         em.getTransaction().begin();
@@ -47,5 +48,23 @@ public class FilmDAO {
         return em.createQuery("SELECT f FROM Film f").getResultList();
 
     }
-    
+
+    public List<Film> listerParGenre(Long idGenre) {
+        EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
+        return em.createQuery("SELECT f FROM Film f WHERE f.genreDuFilm.id'" + idGenre + "'").getResultList();
+
+    }
+
+    public List<Film> listerParPays(Long idPays) {
+        EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
+        return em.createQuery("SELECT f FROM Film f WHERE f.paysDOrigineDuFilm.id'" + idPays + "'").getResultList();
+
+    }
+
+    public List<Film> listerParTitreOuReal(String str) {
+        EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
+        return em.createQuery("SELECT f FROM Film f JOIN f.realisateurDuFilm rf WHERE f.titre LIKE '%" + str + "%' AND ").getResultList();
+
+    }
+
 }
