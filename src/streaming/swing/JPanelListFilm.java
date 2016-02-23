@@ -5,20 +5,24 @@
  */
 package streaming.swing;
 
+import streaming.entity.Film;
+import streaming.service.FilmService;
+
 /**
  *
  * @author admin
  */
 public class JPanelListFilm extends javax.swing.JPanel {
+
     private TableModelListFilm tmListeFilm = null;
-    
+    private FilmService fServ = new FilmService();
+
     public void rafraichitJTable() {
-        tmListeFilm = new TableModelListFilm() ;
+        tmListeFilm = new TableModelListFilm();
         jTableListFilm.setModel(tmListeFilm);
         jTableListFilm.repaint();
     }
-    
-    
+
     /**
      * Creates new form JPanelFilmEdit
      */
@@ -61,6 +65,11 @@ public class JPanelListFilm extends javax.swing.JPanel {
         jButtonSupprimer.setFocusable(false);
         jButtonSupprimer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButtonSupprimer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonSupprimer.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonSupprimerActionPerformed(evt);
+            }
+        });
         jToolBarEditFilm.add(jButtonSupprimer);
 
         add(jToolBarEditFilm, java.awt.BorderLayout.NORTH);
@@ -82,10 +91,22 @@ public class JPanelListFilm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNouveauFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNouveauFilmActionPerformed
-        JDialogEditFilm jdg = new JDialogEditFilm(null,true,this);
+        JDialogEditFilm jdg = new JDialogEditFilm(null, true, this);
 
         jdg.setVisible(true);
     }//GEN-LAST:event_jButtonNouveauFilmActionPerformed
+
+    private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed
+        int i = jTableListFilm.getSelectedRow();
+        if (i == -1) {
+            return;
+        }
+
+        Film f = tmListeFilm.getFilm().get(i);
+        fServ.supprimer(f.getId());
+
+        rafraichitJTable();
+    }//GEN-LAST:event_jButtonSupprimerActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -116,6 +116,20 @@ public class Film implements Serializable {
         this.id = id;
     }
 
+    public Film() {
+    }
+
+    public Film(Long id, Genre genreDuFilm, Pays paysDOrigineDuFilm, String titre, String synopsis, Long annee) {
+        this.id = id;
+        this.genreDuFilm = genreDuFilm;
+        this.paysDOrigineDuFilm = paysDOrigineDuFilm;
+        this.titre = titre;
+        this.synopsis = synopsis;
+        this.annee = annee;
+    }
+
+    
+    
     @Override
     public int hashCode() {
         int hash = 0;

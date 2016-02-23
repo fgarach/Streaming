@@ -5,9 +5,13 @@
  */
 package streaming.swing;
 
+import java.util.ArrayList;
 import java.util.List;
+import streaming.entity.Film;
 import streaming.entity.Genre;
 import streaming.entity.Pays;
+import streaming.exception.SynopsisVideOuNullException;
+import streaming.service.FilmService;
 import streaming.service.GenreService;
 import streaming.service.PaysService;
 
@@ -17,23 +21,37 @@ import streaming.service.PaysService;
  */
 public class JDialogEditFilm extends javax.swing.JDialog {
 
+    private FilmService fServ = new FilmService();
     private PaysService pServ = new PaysService();
     private GenreService gServ = new GenreService();
-    
+
+    private List<Genre> listGenre = new ArrayList<Genre>();
+    private List<Pays> listPays = new ArrayList<Pays>();
+
     private JPanelListFilm jplf;
 
+    public void rafraichirListPaysGenre() {
+        listPays = pServ.listerTous();
+        listGenre = gServ.listerTous();
+
+    }
+
     public void initialiserComboBoxPays() {
-        List<Pays> listPays = pServ.listerTous();
+
+        jComboBoxPays.removeAllItems();
         for (Pays p : listPays) {
             jComboBoxPays.addItem(p.getNom());
         }
+
     }
 
     public void initialiserComboBoxGenre() {
-        List<Genre> listGenre = gServ.listerTous();
+
+        jComboBoxGenre.removeAllItems();
         for (Genre g : listGenre) {
-            jComboBoxPays.addItem(g.getNom());
+            jComboBoxGenre.addItem(g.getNom());
         }
+
     }
 
     /**
@@ -42,6 +60,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     public JDialogEditFilm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        rafraichirListPaysGenre();
         initialiserComboBoxPays();
         initialiserComboBoxGenre();
     }
@@ -66,24 +85,33 @@ public class JDialogEditFilm extends javax.swing.JDialog {
 
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        jTextFieldIdFilm = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jTextField2 = new javax.swing.JTextField();
+        jTextFieldTitre = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jTextField3 = new javax.swing.JTextField();
+        jTextFieldAnnee = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaSynopsis = new javax.swing.JTextArea();
         jLabel4 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jComboBoxPays = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBoxGenre = new javax.swing.JComboBox<>();
+        jPanel6 = new javax.swing.JPanel();
+        jButtonAjouter = new javax.swing.JButton();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout(5, 3));
+        getContentPane().setLayout(new java.awt.GridLayout(7, 3));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("ID du Film");
+        jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         getContentPane().add(jLabel1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -94,14 +122,15 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 42, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1);
 
-        jTextField1.setEditable(false);
-        getContentPane().add(jTextField1);
+        jTextFieldIdFilm.setEditable(false);
+        getContentPane().add(jTextFieldIdFilm);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Titre du Film");
         getContentPane().add(jLabel2);
 
@@ -113,12 +142,13 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 42, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel2);
-        getContentPane().add(jTextField2);
+        getContentPane().add(jTextFieldTitre);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Année de production");
         getContentPane().add(jLabel3);
 
@@ -130,12 +160,36 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 42, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel3);
-        getContentPane().add(jTextField3);
+        getContentPane().add(jTextFieldAnnee);
 
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel6.setText("Synopsis");
+        getContentPane().add(jLabel6);
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 133, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 42, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel8);
+
+        jTextAreaSynopsis.setColumns(20);
+        jTextAreaSynopsis.setRows(5);
+        jScrollPane1.setViewportView(jTextAreaSynopsis);
+
+        getContentPane().add(jScrollPane1);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Pays");
         getContentPane().add(jLabel4);
 
@@ -147,7 +201,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 42, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel4);
@@ -155,6 +209,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         jComboBoxPays.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(jComboBoxPays);
 
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("Genre");
         getContentPane().add(jLabel5);
 
@@ -166,16 +221,72 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 60, Short.MAX_VALUE)
+            .addGap(0, 42, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel5);
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(jComboBox2);
+        jComboBoxGenre.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        getContentPane().add(jComboBoxGenre);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 133, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 42, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel6);
+
+        jButtonAjouter.setText("Ajouter");
+        jButtonAjouter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonAjouterActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButtonAjouter);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 133, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 42, Short.MAX_VALUE)
+        );
+
+        getContentPane().add(jPanel7);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterActionPerformed
+
+        Pays pays=null;
+        Genre genre = null;
+        for (Pays p : listPays) {
+            if (p.getNom().equals(jComboBoxPays.getSelectedItem())) {
+                pays = p;
+            }
+        }
+        for (Genre g : listGenre) {
+            if (g.getNom().equals(jComboBoxGenre.getSelectedItem())) {
+                genre = g;
+            }
+        }
+
+        Film f = new Film(Long.parseLong(jTextFieldIdFilm.getText()), genre, pays , jTextFieldTitre.getText(), jTextAreaSynopsis.getText(), Long.parseLong(jTextFieldAnnee.getText()));
+        try{
+            fServ.ajouter(f);
+        }catch(SynopsisVideOuNullException e){}
+
+    }//GEN-LAST:event_jButtonAjouterActionPerformed
 
     /**
      * @param args the command line arguments
@@ -220,20 +331,27 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JButton jButtonAjouter;
+    private javax.swing.JComboBox<String> jComboBoxGenre;
     private javax.swing.JComboBox<String> jComboBoxPays;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextAreaSynopsis;
+    private javax.swing.JTextField jTextFieldAnnee;
+    private javax.swing.JTextField jTextFieldIdFilm;
+    private javax.swing.JTextField jTextFieldTitre;
     // End of variables declaration//GEN-END:variables
 }

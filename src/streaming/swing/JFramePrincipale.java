@@ -105,7 +105,6 @@ public class JFramePrincipale extends javax.swing.JFrame {
         jpCentral = new JPanelListFilm();
         add(jpCentral, BorderLayout.CENTER);
         this.pack();
-        System.out.println("coucouy");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
