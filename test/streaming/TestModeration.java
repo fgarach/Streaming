@@ -30,10 +30,20 @@ public class TestModeration {
         fs.ajouter(f);
      
     }
-    @Test
+   // @Test
     public void testListerParTitreOuReal(){
         FilmService fs = new FilmService();
         List<Film> list=fs.listerParTitreOuReal("te");
+        System.out.println(list.size());
+        
+        for(Film f : list){
+            System.out.println(f.getTitre());
+        }
+    }
+    @Test
+    public void testListerParGenre(){
+        FilmService fs = new FilmService();
+        List<Film> list=fs.listerParGenre(2L);
         System.out.println(list.size());
         
         for(Film f : list){

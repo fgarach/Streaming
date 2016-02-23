@@ -52,7 +52,7 @@ public class SerieDAO {
 
     public List<Serie> listerParPays(Long idPays) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
-        return em.createQuery("SELECT s FROM Serie s WHERE s.paysDOrigineDeLaSerie" + idPays + "'").getResultList();
+        return em.createQuery("SELECT s FROM Serie s WHERE s.paysDOrigineDeLaSerie=" + idPays).getResultList();
 
     }
 

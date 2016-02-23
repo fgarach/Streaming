@@ -51,13 +51,13 @@ public class FilmDAO {
 
     public List<Film> listerParGenre(Long idGenre) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
-        return em.createQuery("SELECT f FROM Film f WHERE f.genreDuFilm.id'" + idGenre + "'").getResultList();
+        return em.createQuery("SELECT f FROM Film f WHERE f.genreDuFilm.id=" + idGenre).getResultList();
 
     }
 
     public List<Film> listerParPays(Long idPays) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
-        return em.createQuery("SELECT f FROM Film f WHERE f.paysDOrigineDuFilm.id'" + idPays + "'").getResultList();
+        return em.createQuery("SELECT f FROM Film f WHERE f.paysDOrigineDuFilm.id=" + idPays).getResultList();
 
     }
 
