@@ -13,11 +13,11 @@ import javax.swing.JPanel;
  * @author admin
  */
 public class JFramePrincipale extends javax.swing.JFrame {
-    
+
     private JPanel jpCentral = null;
-    
-    private void supprimePanneaux(){
-        if(jpCentral==null){
+
+    private void supprimePanneaux() {
+        if (jpCentral == null) {
             return;
         }
         this.remove(this.jpCentral);
@@ -95,24 +95,17 @@ public class JFramePrincipale extends javax.swing.JFrame {
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar1.add(jButton5);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jToolBar1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 275, Short.MAX_VALUE))
-        );
+        getContentPane().add(jToolBar1, java.awt.BorderLayout.NORTH);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
+        supprimePanneaux();
+        jpCentral = new JPanelListFilm();
+        add(jpCentral, BorderLayout.CENTER);
+        this.pack();
+        System.out.println("coucouy");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -155,7 +148,9 @@ public class JFramePrincipale extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFramePrincipale().setVisible(true);
+                JFramePrincipale jfp = new JFramePrincipale();
+                jfp.setSize(800, 600);
+                jfp.setVisible(true);
             }
         });
     }

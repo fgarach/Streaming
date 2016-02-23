@@ -10,12 +10,21 @@ package streaming.swing;
  * @author admin
  */
 public class JPanelListFilm extends javax.swing.JPanel {
-
+    private TableModelListFilm tmListeFilm = null;
+    
+    public void rafraichitJTable() {
+        tmListeFilm = new TableModelListFilm() ;
+        jTableListFilm.setModel(tmListeFilm);
+        jTableListFilm.repaint();
+    }
+    
+    
     /**
      * Creates new form JPanelFilmEdit
      */
     public JPanelListFilm() {
         initComponents();
+        rafraichitJTable();
     }
 
     /**
@@ -27,19 +36,63 @@ public class JPanelListFilm extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jToolBarEditFilm = new javax.swing.JToolBar();
+        jButtonNouveauFilm = new javax.swing.JButton();
+        jButtonSupprimer = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTableListFilm = new javax.swing.JTable();
+
+        setLayout(new java.awt.BorderLayout());
+
+        jToolBarEditFilm.setRollover(true);
+
+        jButtonNouveauFilm.setText("Nouveau Film");
+        jButtonNouveauFilm.setFocusable(false);
+        jButtonNouveauFilm.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonNouveauFilm.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButtonNouveauFilm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonNouveauFilmActionPerformed(evt);
+            }
+        });
+        jToolBarEditFilm.add(jButtonNouveauFilm);
+
+        jButtonSupprimer.setText("Supprimer");
+        jButtonSupprimer.setFocusable(false);
+        jButtonSupprimer.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButtonSupprimer.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBarEditFilm.add(jButtonSupprimer);
+
+        add(jToolBarEditFilm, java.awt.BorderLayout.NORTH);
+
+        jTableListFilm.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTableListFilm);
+
+        add(jScrollPane1, java.awt.BorderLayout.CENTER);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonNouveauFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNouveauFilmActionPerformed
+        JDialogEditFilm jdg = new JDialogEditFilm(null,true,this);
+
+        jdg.setVisible(true);
+    }//GEN-LAST:event_jButtonNouveauFilmActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonNouveauFilm;
+    private javax.swing.JButton jButtonSupprimer;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTableListFilm;
+    private javax.swing.JToolBar jToolBarEditFilm;
     // End of variables declaration//GEN-END:variables
 }

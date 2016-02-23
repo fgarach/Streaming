@@ -45,7 +45,7 @@ public class FilmDAO {
 
     public List<Film> listerTous() {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();
-        return em.createQuery("SELECT f FROM Film f").getResultList();
+        return em.createQuery("SELECT f FROM Film f ORDER BY f.titre").getResultList();
 
     }
 
