@@ -20,7 +20,7 @@ public class TestModeration {
     
     FilmService fs = new FilmService();
     
-   // @Test
+    //@Test
     public void testAjoutFilm() throws SynopsisVideOuNullException{
         Film f = new Film();
         f.setId(1L);
@@ -33,7 +33,7 @@ public class TestModeration {
     @Test
     public void testListerParTitreOuReal(){
         FilmService fs = new FilmService();
-        List<Film> list=fs.listerParTitreOuReal("Jackson");
+        List<Film> list=fs.listerParTitreOuReal("te");
         System.out.println(list.size());
         
         for(Film f : list){

@@ -365,6 +365,8 @@ public class FilmTest {
             r2.getFilmDeRealisateur().add(f1);
             fServ.ajouter(f1);
         }
+        
+        
 
         {
             Serie s1 = new Serie();
