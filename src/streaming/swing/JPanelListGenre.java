@@ -35,7 +35,6 @@ public class JPanelListGenre extends javax.swing.JPanel {
     
     public JPanelListGenre() {
         initComponents();
-        rafraichiJTable();
     }
 
     /**

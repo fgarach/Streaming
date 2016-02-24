@@ -25,6 +25,21 @@ public class JFramePrincipale extends javax.swing.JFrame {
     
     @Autowired
     private JPanelListFilm jPanelListFilm;
+    
+    @Autowired
+    private JPanelListGenre jPanelListGenre;
+    
+    @Autowired
+    private JPanelListPays jPanelListPays;
+    
+    @Autowired
+    private JPanelListSerie jPanelListSerie;
+    
+    @Autowired
+    private JPanelListRealisateur jPanelListRealisateur;
+    
+    @Autowired
+    private JPanelListSaison jPanelListSaison;
 
 
     private void supprimePanneaux() {
@@ -152,31 +167,31 @@ public class JFramePrincipale extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListGenre();
+        jpCentral =  jPanelListGenre;
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListPays();
+        jpCentral = jPanelListPays;
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListSerie();
+        jpCentral = jPanelListSerie;
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListRealisateur();
+        jpCentral = jPanelListRealisateur;
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListSaison();
+        jpCentral = jPanelListSaison;
         add(jpCentral, BorderLayout.CENTER);
     }//GEN-LAST:event_jButton8ActionPerformed
 
