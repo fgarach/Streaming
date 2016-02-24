@@ -34,8 +34,7 @@ public class TableModelListGenre extends DefaultTableModel{
     public TableModelListGenre(){
 
         setColumnIdentifiers(new String[]{"ID","Genre"});
-        genre = gServ.listerTous();
-        nbGenre = genre.size();
+
         
     }
     
