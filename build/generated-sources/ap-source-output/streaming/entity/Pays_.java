@@ -7,7 +7,7 @@ import javax.persistence.metamodel.StaticMetamodel;
 import streaming.entity.Film;
 import streaming.entity.Serie;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-02-24T14:34:32")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-02-24T16:41:16")
 @StaticMetamodel(Pays.class)
 public class Pays_ { 
 

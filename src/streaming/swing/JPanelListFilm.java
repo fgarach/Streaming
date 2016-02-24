@@ -7,6 +7,8 @@ package streaming.swing;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import streaming.entity.Film;
 import streaming.service.FilmService;
 
@@ -14,15 +16,20 @@ import streaming.service.FilmService;
  *
  * @author admin
  */
+
+@Component
 public class JPanelListFilm extends javax.swing.JPanel {
 
-    private TableModelListFilm tmListeFilm = null;
+    @Autowired
+    private TableModelListFilm tmListeFilm;
+    
     
     @Autowired
-    private FilmService fServ = new FilmService();
+    private FilmService fServ;
 
     public void rafraichitJTable() {
-        tmListeFilm = new TableModelListFilm();
+        
+        tmListeFilm.rafraichir();
         jTableListFilm.setModel(tmListeFilm);
         jTableListFilm.repaint();
     }
@@ -32,7 +39,7 @@ public class JPanelListFilm extends javax.swing.JPanel {
      */
     public JPanelListFilm() {
         initComponents();
-        rafraichitJTable();
+        
     }
 
     /**

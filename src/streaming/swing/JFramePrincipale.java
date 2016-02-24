@@ -8,9 +8,11 @@ package streaming.swing;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
+
 
 /**
  *
@@ -21,6 +23,9 @@ public class JFramePrincipale extends javax.swing.JFrame {
 
     private JPanel jpCentral = null;
     
+    @Autowired
+    private JPanelListFilm jPanelListFilm;
+
 
     private void supprimePanneaux() {
         if (jpCentral == null) {
@@ -137,8 +142,11 @@ public class JFramePrincipale extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         supprimePanneaux();
-        jpCentral = new JPanelListFilm();
+        jpCentral = jPanelListFilm;
+        
         add(jpCentral, BorderLayout.CENTER);
+        
+        jPanelListFilm.rafraichitJTable();
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

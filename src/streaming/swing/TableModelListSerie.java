@@ -15,47 +15,48 @@ import streaming.service.SerieService;
  *
  * @author admin
  */
-public class TableModelListSerie extends DefaultTableModel{
-    
-     private List<Serie> serie = null;
-    private int nbSerie = 0;
-    
-    @Autowired
-    private SerieService sServ;
-    
-    public TableModelListSerie(){
+public class TableModelListSerie extends DefaultTableModel {
 
-        setColumnIdentifiers(new String[]{"ID","Titre de la serie","Pays","Synopsis"});
+    private List<Serie> serie = null;
+    private int nbSerie = 0;
+
+    public void rafraichir() {
         serie = sServ.listerTous();
         nbSerie = serie.size();
-        
     }
-    
+
+    @Autowired
+    private SerieService sServ;
+
+    public TableModelListSerie() {
+
+        setColumnIdentifiers(new String[]{"ID", "Titre de la serie", "Pays", "Synopsis"});
+
+    }
+
     @Override
     public int getRowCount() {
-        return nbSerie; 
+        return nbSerie;
     }
-    
-    
-    
+
     @Override
-    public Object getValueAt(int row, int column){
+    public Object getValueAt(int row, int column) {
         Serie s = serie.get(row);
-        if (column==0){
+        if (column == 0) {
             return s.getId();
         }
-        if (column==1){
+        if (column == 1) {
             return s.getTitre();
         }
-        if (column==2){
+        if (column == 2) {
             return s.getPaysDOrigineDeLaSerie().getNom();
         }
-        if (column==3){
+        if (column == 3) {
             return s.getSynopsis();
         }
-        
+
         return "***ERREUR****";
-            
+
     }
-    
+
 }

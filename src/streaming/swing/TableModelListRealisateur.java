@@ -8,6 +8,7 @@ package streaming.swing;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -15,8 +16,9 @@ import streaming.service.RealisateurService;
  *
  * @author admin
  */
+@Component
 public class TableModelListRealisateur extends DefaultTableModel {
-    
+
     @Autowired
     private RealisateurService rServ;
 
@@ -27,13 +29,16 @@ public class TableModelListRealisateur extends DefaultTableModel {
     }
     private int nbRealisateur = 0;
 
+    public void rafraichir() {
+        realisateurs = rServ.listerTous();
+
+        nbRealisateur = realisateurs.size();
+    }
+
     public TableModelListRealisateur() {
 
         setColumnIdentifiers(new String[]{"ID", "Nom du Réalisateur", "Prénom du Réalisateur"});
 
-        realisateurs = rServ.listerTous();
-
-        nbRealisateur = realisateurs.size();
     }
 
     @Override
@@ -55,8 +60,7 @@ public class TableModelListRealisateur extends DefaultTableModel {
             return r.getPrenom();
         }
 
-
         return "******* Erreur *******";
     }
-   
+
 }

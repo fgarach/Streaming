@@ -9,7 +9,7 @@ import streaming.entity.Lien;
 import streaming.entity.Pays;
 import streaming.entity.Realisateur;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-02-24T14:34:32")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2016-02-24T16:41:16")
 @StaticMetamodel(Film.class)
 public class Film_ { 
 

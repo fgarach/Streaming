@@ -33,7 +33,8 @@ public class JDialogEditFilm extends javax.swing.JDialog {
 
     private List<Genre> listGenre = new ArrayList<Genre>();
     private List<Pays> listPays = new ArrayList<Pays>();
-
+    
+    
     private JPanelListFilm jplf;
 
     public void rafraichirListPaysGenre() {

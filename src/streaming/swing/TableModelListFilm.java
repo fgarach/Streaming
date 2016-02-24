@@ -8,19 +8,21 @@ package streaming.swing;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.entity.Film;
 import streaming.service.FilmService;
 import streaming.service.GenreService;
-import streaming.service.PaysService;
 
 /**
  *
  * @author admin
  */
+@Component
 public class TableModelListFilm extends DefaultTableModel {
 
     @Autowired
     private FilmService fServ;
+
     @Autowired
     private GenreService gServ;
 
@@ -31,13 +33,16 @@ public class TableModelListFilm extends DefaultTableModel {
     }
     private int nbFilm = 0;
 
+    public void rafraichir() {
+        film = fServ.listerTous();
+
+        nbFilm = film.size();
+    }
+
     public TableModelListFilm() {
 
         setColumnIdentifiers(new String[]{"ID", "Titre du film", "Année de Production", "Pays", "Genre", "Synopsis"});
 
-        film = fServ.listerTous();
-
-        nbFilm = film.size();
     }
 
     @Override
