@@ -6,6 +6,7 @@
 package streaming.service;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import streaming.dao.SerieDAO;
 import streaming.entity.Serie;
@@ -17,7 +18,8 @@ import streaming.entity.Serie;
 @Service
 public class SerieService {
     
-    private SerieDAO sDao = new SerieDAO();
+    @Autowired
+    private SerieDAO sDao;
     
     public void ajouter(Serie s) {
         sDao.ajouter(s);

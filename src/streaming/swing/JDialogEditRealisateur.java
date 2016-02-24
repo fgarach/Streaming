@@ -6,6 +6,7 @@
 package streaming.swing;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -15,8 +16,8 @@ import streaming.service.RealisateurService;
  */
 public class JDialogEditRealisateur extends javax.swing.JDialog {
 
-
-    private RealisateurService rServ = new RealisateurService();
+    @Autowired
+    private RealisateurService rServ;
 
     private JPanelListRealisateur jplr;
 

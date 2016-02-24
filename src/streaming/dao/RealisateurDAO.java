@@ -15,7 +15,7 @@ import streaming.entity.Realisateur;
  *
  * @author admin
  */
-
+@Repository
 public class RealisateurDAO {
     
     public void ajouter(Realisateur r) {

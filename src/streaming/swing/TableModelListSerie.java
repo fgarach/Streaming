@@ -21,7 +21,7 @@ public class TableModelListSerie extends DefaultTableModel{
     private int nbSerie = 0;
     
     @Autowired
-    SerieService sServ;
+    private SerieService sServ;
     
     public TableModelListSerie(){
 

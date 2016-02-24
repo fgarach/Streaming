@@ -6,6 +6,8 @@
 package streaming.service;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import streaming.dao.RealisateurDAO;
 import streaming.entity.Realisateur;
@@ -14,11 +16,11 @@ import streaming.entity.Realisateur;
  *
  * @author admin
  */
-
+@Service
 public class RealisateurService {
     
-
-    private RealisateurDAO rDao= new RealisateurDAO();
+    @Autowired
+    private RealisateurDAO rDao;
     
     public void ajouter(Realisateur r) {
         rDao.ajouter(r);

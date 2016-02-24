@@ -15,7 +15,7 @@ import streaming.service.SaisonService;
 public class JPanelListSaison extends javax.swing.JPanel {
     
     @Autowired
-    SaisonService sServ ;
+    private SaisonService sServ ;
     
     public void rafraichiJTable(){
         

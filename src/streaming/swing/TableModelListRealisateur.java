@@ -17,8 +17,8 @@ import streaming.service.RealisateurService;
  */
 public class TableModelListRealisateur extends DefaultTableModel {
     
-
-    private RealisateurService rServ = new RealisateurService();
+    @Autowired
+    private RealisateurService rServ;
 
     private List<Realisateur> realisateurs = null;
 

@@ -26,9 +26,10 @@ public class JDialogEditFilm extends javax.swing.JDialog {
 
     @Autowired
     private FilmService fServ;
-    
-    private PaysService pServ = new PaysService();
-    private GenreService gServ = new GenreService();
+    @Autowired
+    private PaysService pServ;
+    @Autowired
+    private GenreService gServ;
 
     private List<Genre> listGenre = new ArrayList<Genre>();
     private List<Pays> listPays = new ArrayList<Pays>();

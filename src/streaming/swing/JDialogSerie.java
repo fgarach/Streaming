@@ -21,7 +21,8 @@ public class JDialogSerie extends javax.swing.JDialog {
     
     @Autowired
     private SerieService sServ;
-    private PaysService pServ = new PaysService();
+    @Autowired
+    private PaysService pServ;
     private JPanelListSerie jpls;
     private List<Pays> listPays = new ArrayList<Pays>();
     

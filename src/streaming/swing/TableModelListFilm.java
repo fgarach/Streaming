@@ -21,7 +21,8 @@ public class TableModelListFilm extends DefaultTableModel {
 
     @Autowired
     private FilmService fServ;
-    GenreService gServ = new GenreService();
+    @Autowired
+    private GenreService gServ;
 
     private List<Film> film = null;
 

@@ -20,7 +20,7 @@ public class TableModelListSaison extends DefaultTableModel{
     private List<Saison> saison = null;
     private int nbSaison = 0;
     @Autowired
-    SaisonService sServ;
+    private SaisonService sServ;
     
     public TableModelListSaison(){
 

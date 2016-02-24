@@ -6,6 +6,7 @@
 package streaming.swing;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -17,8 +18,8 @@ public class JPanelListRealisateur extends javax.swing.JPanel {
 
     private TableModelListRealisateur tmListeRealisateur = null;
     
-
-    private RealisateurService rServ = new RealisateurService();
+    @Autowired
+    private RealisateurService rServ;
 
     public void rafraichitJTable() {
         tmListeRealisateur = new TableModelListRealisateur();
