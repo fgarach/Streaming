@@ -3,10 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JDialogEditRealisateur.java</file>
-            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JPanelListSerie.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JDialogLien.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JDialogFilm.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JDialogSerie.java</file>
             <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JFramePrincipale.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JPanelListSerie.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/TableModelListFilm.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JDialogEditRealisateur.java</file>
+            <file>file:/C:/Users/admin/Documents/NetBeansProjects/Streaming/src/streaming/swing/JPanelListFilm.java</file>
         </group>
     </open-files>
 </project-private>

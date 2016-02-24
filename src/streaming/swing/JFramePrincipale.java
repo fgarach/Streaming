@@ -6,7 +6,6 @@
 package streaming.swing;
 
 import java.awt.BorderLayout;
-import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
