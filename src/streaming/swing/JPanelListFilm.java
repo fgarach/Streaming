@@ -14,7 +14,6 @@ import streaming.service.FilmService;
  *
  * @author admin
  */
-
 public class JPanelListFilm extends javax.swing.JPanel {
 
     private TableModelListFilm tmListeFilm = null;

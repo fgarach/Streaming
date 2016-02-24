@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.FileSystemXmlApplicationContext;
 import org.springframework.stereotype.Component;
@@ -19,6 +20,7 @@ import org.springframework.stereotype.Component;
 public class JFramePrincipale extends javax.swing.JFrame {
 
     private JPanel jpCentral = null;
+    
 
     private void supprimePanneaux() {
         if (jpCentral == null) {
