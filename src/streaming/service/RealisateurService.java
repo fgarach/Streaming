@@ -6,6 +6,7 @@
 package streaming.service;
 
 import java.util.List;
+
 import streaming.dao.RealisateurDAO;
 import streaming.entity.Realisateur;
 
@@ -13,9 +14,11 @@ import streaming.entity.Realisateur;
  *
  * @author admin
  */
+
 public class RealisateurService {
     
-    private RealisateurDAO rDao = new RealisateurDAO();
+
+    private RealisateurDAO rDao= new RealisateurDAO();
     
     public void ajouter(Realisateur r) {
         rDao.ajouter(r);

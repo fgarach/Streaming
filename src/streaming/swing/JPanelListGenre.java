@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+
 import streaming.service.GenreService;
 
 /**
@@ -13,7 +14,8 @@ import streaming.service.GenreService;
  */
 public class JPanelListGenre extends javax.swing.JPanel {
     
-    GenreService gServ = new GenreService();
+
+    private GenreService gServ = new GenreService();
     
     public void rafraichiJTable(){
         

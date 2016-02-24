@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -13,6 +14,7 @@ import streaming.service.RealisateurService;
  * @author admin
  */
 public class JDialogEditRealisateur extends javax.swing.JDialog {
+
 
     private RealisateurService rServ = new RealisateurService();
 

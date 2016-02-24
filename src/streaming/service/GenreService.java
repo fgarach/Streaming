@@ -6,6 +6,7 @@
 package streaming.service;
 
 import java.util.List;
+
 import streaming.dao.GenreDAO;
 import streaming.entity.Genre;
 
@@ -13,9 +14,11 @@ import streaming.entity.Genre;
  *
  * @author admin
  */
+
 public class GenreService {
     
-    private GenreDAO gDao = new GenreDAO();
+
+    private GenreDAO gDao=new GenreDAO();
     
     public void ajouter(Genre g) {
         gDao.ajouter(g);

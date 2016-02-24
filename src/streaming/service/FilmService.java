@@ -6,6 +6,10 @@
 package streaming.service;
 
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
 import streaming.dao.FilmDAO;
 import streaming.entity.Film;
 import streaming.exception.SynopsisVideOuNullException;
@@ -14,9 +18,12 @@ import streaming.exception.SynopsisVideOuNullException;
  *
  * @author admin
  */
+
+@Service
 public class FilmService {
 
-    private FilmDAO fDao = new FilmDAO();
+    @Autowired
+    private FilmDAO fDao;
 
     private boolean SynopsysEstNulOuVide(Film f) {
 

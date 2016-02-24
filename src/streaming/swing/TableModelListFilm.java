@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Film;
 import streaming.service.FilmService;
 import streaming.service.GenreService;
@@ -18,7 +19,8 @@ import streaming.service.PaysService;
  */
 public class TableModelListFilm extends DefaultTableModel {
 
-    FilmService fServ = new FilmService();
+    @Autowired
+    private FilmService fServ;
     GenreService gServ = new GenreService();
 
     private List<Film> film = null;

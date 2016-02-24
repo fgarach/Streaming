@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -15,6 +16,8 @@ import streaming.service.RealisateurService;
 public class JPanelListRealisateur extends javax.swing.JPanel {
 
     private TableModelListRealisateur tmListeRealisateur = null;
+    
+
     private RealisateurService rServ = new RealisateurService();
 
     public void rafraichitJTable() {

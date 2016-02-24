@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+
 import streaming.entity.Genre;
 import streaming.service.GenreService;
 
@@ -14,6 +15,7 @@ import streaming.service.GenreService;
  */
 public class JDialogGenre extends javax.swing.JDialog {
     
+
     private GenreService gServ = new GenreService();
     private JPanelListGenre jplg;
     

@@ -7,6 +7,8 @@ package streaming.swing;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+
 import streaming.entity.Film;
 import streaming.entity.Genre;
 import streaming.entity.Pays;
@@ -19,9 +21,12 @@ import streaming.service.PaysService;
  *
  * @author admin
  */
+
 public class JDialogEditFilm extends javax.swing.JDialog {
 
-    private FilmService fServ = new FilmService();
+    @Autowired
+    private FilmService fServ;
+    
     private PaysService pServ = new PaysService();
     private GenreService gServ = new GenreService();
 

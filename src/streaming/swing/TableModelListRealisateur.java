@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -15,7 +16,9 @@ import streaming.service.RealisateurService;
  * @author admin
  */
 public class TableModelListRealisateur extends DefaultTableModel {
-    RealisateurService rServ = new RealisateurService();
+    
+
+    private RealisateurService rServ = new RealisateurService();
 
     private List<Realisateur> realisateurs = null;
 

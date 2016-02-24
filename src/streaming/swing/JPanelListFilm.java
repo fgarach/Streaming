@@ -5,6 +5,8 @@
  */
 package streaming.swing;
 
+
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Film;
 import streaming.service.FilmService;
 
@@ -12,9 +14,12 @@ import streaming.service.FilmService;
  *
  * @author admin
  */
+
 public class JPanelListFilm extends javax.swing.JPanel {
 
     private TableModelListFilm tmListeFilm = null;
+    
+    @Autowired
     private FilmService fServ = new FilmService();
 
     public void rafraichitJTable() {
