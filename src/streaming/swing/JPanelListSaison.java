@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.service.SaisonService;
 
 /**
@@ -13,8 +14,8 @@ import streaming.service.SaisonService;
  */
 public class JPanelListSaison extends javax.swing.JPanel {
     
-
-    SaisonService sServ = new SaisonService();
+    @Autowired
+    SaisonService sServ ;
     
     public void rafraichiJTable(){
         

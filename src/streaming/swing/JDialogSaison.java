@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Saison;
 import streaming.entity.Serie;
 import streaming.service.SaisonService;
@@ -17,9 +18,10 @@ import streaming.service.SerieService;
  * @author admin
  */
 public class JDialogSaison extends javax.swing.JDialog {
-    
-    private SerieService seServ = new SerieService();
-    private SaisonService saServ = new SaisonService();
+    @Autowired
+    private SerieService seServ;
+    @Autowired
+    private SaisonService saServ;
     private JPanelListSaison jpls;
     private List<Serie> listSerie = new ArrayList<Serie>();
     private List<Saison> listSaison = new ArrayList<Saison>();
