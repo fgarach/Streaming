@@ -6,6 +6,7 @@
 package streaming.swing;
 
 import javax.swing.JDialog;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.service.PaysService;
 
 /**
@@ -13,8 +14,8 @@ import streaming.service.PaysService;
  * @author admin
  */
 public class JPanelListPays extends javax.swing.JPanel {
-    
-    PaysService pServ = new PaysService();
+    @Autowired
+    private PaysService pServ;
     
     public void rafraichiJTable(){
         

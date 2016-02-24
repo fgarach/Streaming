@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Pays;
 import streaming.service.PaysService;
 
@@ -13,7 +14,8 @@ import streaming.service.PaysService;
  * @author admin
  */
 public class JDialogPays extends javax.swing.JDialog {
-    private PaysService pServ = new PaysService();
+    @Autowired
+    private PaysService pServ;
     private JPanelListPays jplp;
     
     public JDialogPays(java.awt.Frame parent, boolean modal, JPanelListPays jplp) {

@@ -6,6 +6,7 @@
 package streaming.swing;
 
 import javax.swing.JTable;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.service.SerieService;
 
 /**
@@ -13,8 +14,9 @@ import streaming.service.SerieService;
  * @author admin
  */
 public class JPanelListSerie extends javax.swing.JPanel {
-
-    private SerieService sServ = new SerieService();
+    
+    @Autowired
+    private SerieService sServ;
 
     public void rafraichiJTable() {
 

@@ -9,6 +9,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 import javax.swing.table.DefaultTableModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Pays;
 import streaming.service.PaysService;
 
@@ -20,7 +21,9 @@ public class TableModelListPays extends DefaultTableModel{
     
     private List<Pays> pays = null;
     private int nbPays = 0;
-    PaysService pServ = new PaysService();
+    @Autowired
+    private PaysService pServ;
+    
     
     public TableModelListPays(){
 

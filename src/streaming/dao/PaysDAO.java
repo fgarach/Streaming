@@ -8,6 +8,8 @@ package streaming.dao;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 import streaming.entity.Pays;
 
 
@@ -15,6 +17,7 @@ import streaming.entity.Pays;
  *
  * @author admin
  */
+@Repository
 public class PaysDAO {
     public void ajouter(Pays p) {
         EntityManager em = Persistence.createEntityManagerFactory("StreamingPU").createEntityManager();

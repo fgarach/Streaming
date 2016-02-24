@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Pays;
 import streaming.entity.Serie;
 import streaming.service.PaysService;
@@ -18,8 +19,8 @@ import streaming.service.SerieService;
  */
 public class JDialogSerie extends javax.swing.JDialog {
     
-    
-    private SerieService sServ = new SerieService();
+    @Autowired
+    private SerieService sServ;
     private PaysService pServ = new PaysService();
     private JPanelListSerie jpls;
     private List<Pays> listPays = new ArrayList<Pays>();

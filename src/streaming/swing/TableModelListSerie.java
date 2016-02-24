@@ -7,6 +7,7 @@ package streaming.swing;
 
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.entity.Serie;
 import streaming.service.SerieService;
 
@@ -18,7 +19,9 @@ public class TableModelListSerie extends DefaultTableModel{
     
      private List<Serie> serie = null;
     private int nbSerie = 0;
-    SerieService sServ = new SerieService();
+    
+    @Autowired
+    SerieService sServ;
     
     public TableModelListSerie(){
 
