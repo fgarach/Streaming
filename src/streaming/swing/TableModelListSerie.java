@@ -50,6 +50,7 @@ public class TableModelListSerie extends DefaultTableModel{
         if (column==3){
             return s.getSynopsis();
         }
+        
         return "***ERREUR****";
             
     }

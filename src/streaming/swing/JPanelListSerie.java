@@ -5,6 +5,7 @@
  */
 package streaming.swing;
 
+import javax.swing.JTable;
 import streaming.service.SerieService;
 
 /**
@@ -12,11 +13,11 @@ import streaming.service.SerieService;
  * @author admin
  */
 public class JPanelListSerie extends javax.swing.JPanel {
-    
+
     private SerieService sServ = new SerieService();
-    
-    public void rafraichiJTable(){
-        
+
+    public void rafraichiJTable() {
+
         jTableSerie.setModel(new TableModelListSerie());
         jTableSerie.repaint();
     }
@@ -89,21 +90,21 @@ public class JPanelListSerie extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-               
+
         int i = jTableSerie.getSelectedRow();
-        if (i == -1){
+        if (i == -1) {
             return;
         }
-        
-        long Id = (long) jTableSerie.getValueAt(i,0);
+
+        long Id = (long) jTableSerie.getValueAt(i, 0);
         sServ.supprimer(Id);
-        
+
         rafraichiJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JDialogSerie dialog = new JDialogSerie(null, true,this);
-        
+        JDialogSerie dialog = new JDialogSerie(null, true, this);
+
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

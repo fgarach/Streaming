@@ -6,6 +6,7 @@
 package streaming.swing;
 
 import java.awt.BorderLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 /**
@@ -114,7 +115,7 @@ public class JFramePrincipale extends javax.swing.JFrame {
         supprimePanneaux();
         jpCentral = new JPanelListFilm();
         add(jpCentral, BorderLayout.CENTER);
-        this.pack();
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed

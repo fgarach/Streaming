@@ -83,6 +83,7 @@ public class JDialogSerie extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridLayout(5, 3));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Id de la série");
         getContentPane().add(jLabel1);
 
@@ -102,6 +103,7 @@ public class JDialogSerie extends javax.swing.JDialog {
         jTextField1.setEditable(false);
         getContentPane().add(jTextField1);
 
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("Titre de la serie");
         getContentPane().add(jLabel2);
 
@@ -119,6 +121,7 @@ public class JDialogSerie extends javax.swing.JDialog {
         getContentPane().add(jPanel2);
         getContentPane().add(jTextFieldTitre);
 
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Synopsis");
         getContentPane().add(jLabel3);
 
@@ -136,6 +139,7 @@ public class JDialogSerie extends javax.swing.JDialog {
         getContentPane().add(jPanel3);
         getContentPane().add(jTextFieldSynopsis);
 
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("Pays");
         getContentPane().add(jLabel4);
 
@@ -202,7 +206,8 @@ public class JDialogSerie extends javax.swing.JDialog {
             }
         }
         
-        sServ.ajouter(serie);
+        
+       // sServ.ajouter(serie);
         
         
         this.jpls.rafraichiJTable();

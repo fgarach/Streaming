@@ -30,7 +30,7 @@ public class TableModelListFilm extends DefaultTableModel {
 
     public TableModelListFilm() {
 
-        setColumnIdentifiers(new String[]{"ID", "Titre du film", "Année de Production", "Pays", "Genre"});
+        setColumnIdentifiers(new String[]{"ID", "Titre du film", "Année de Production", "Pays", "Genre", "Synopsis"});
 
         film = fServ.listerTous();
 
@@ -40,6 +40,11 @@ public class TableModelListFilm extends DefaultTableModel {
     @Override
     public int getRowCount() {
         return nbFilm;
+    }
+
+    @Override
+    public boolean isCellEditable(int row, int col) {
+        return false;
     }
 
     @Override
@@ -60,6 +65,9 @@ public class TableModelListFilm extends DefaultTableModel {
         }
         if (column == 4) {
             return f.getGenreDuFilm().getNom();
+        }
+        if (column == 5) {
+            return f.getSynopsis();
         }
 
         return "******* Erreur *******";

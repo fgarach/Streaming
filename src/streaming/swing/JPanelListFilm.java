@@ -85,6 +85,11 @@ public class JPanelListFilm extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        jTableListFilm.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableListFilmMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableListFilm);
 
         add(jScrollPane1, java.awt.BorderLayout.CENTER);
@@ -107,6 +112,18 @@ public class JPanelListFilm extends javax.swing.JPanel {
 
         rafraichitJTable();
     }//GEN-LAST:event_jButtonSupprimerActionPerformed
+
+    private void jTableListFilmMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableListFilmMouseClicked
+        if (evt.getClickCount() == 2) {
+            
+            int i = jTableListFilm.getSelectedRow();
+            Film f = tmListeFilm.getFilm().get(i);
+
+            JDialogFilm jdg = new JDialogFilm(null, true,f);
+
+            jdg.setVisible(true);
+        }
+    }//GEN-LAST:event_jTableListFilmMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
