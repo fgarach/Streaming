@@ -7,20 +7,24 @@ package streaming.swing;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.service.GenreService;
 
 /**
  *
  * @author admin
  */
+@Component
 public class JPanelListGenre extends javax.swing.JPanel {
     
     @Autowired
     private GenreService gServ;
     
+    private TableModelListGenre tableModelListGenre;
+    
     public void rafraichiJTable(){
-        
-        jTableGenre.setModel(new TableModelListGenre());
+        tableModelListGenre.rafraichir();
+        jTableGenre.setModel(tableModelListGenre);
         jTableGenre.repaint();
     }
 
