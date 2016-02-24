@@ -13,27 +13,28 @@ import streaming.entity.Film;
  */
 public class JDialogFilm extends javax.swing.JDialog {
 
-    private Film f=null;
+    private Film f = null;
+
     /**
      * Creates new form JDialofFilm
      */
     public JDialogFilm(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+
     }
-    
-    
-    
-    public void initialiserLabel(){
+
+    public void initialiserLabel() {
         jLabelId.setText(f.getId().toString());
         jLabelTitre.setText(f.getTitre());
         jLabelAnnee.setText(f.getAnnee().toString());
         jLabelPays.setText(f.getPaysDOrigineDuFilm().getNom());
         jLabelGenre.setText(f.getGenreDuFilm().getNom());
-        jLabelSynopsis.setText(f.getSynopsis());
+        jTextPaneSynopsis.setText(f.getSynopsis());
+
     }
 
-    public JDialogFilm(java.awt.Frame parent, boolean modal,Film f) {
+    public JDialogFilm(java.awt.Frame parent, boolean modal, Film f) {
         super(parent, modal);
         this.f = f;
         initComponents();
@@ -69,7 +70,8 @@ public class JDialogFilm extends javax.swing.JDialog {
         jLabelGenre = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
-        jLabelSynopsis = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextPaneSynopsis = new javax.swing.JTextPane();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
@@ -81,7 +83,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,7 +100,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,7 +117,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -135,7 +137,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel7Layout.setVerticalGroup(
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +157,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel8.setLayout(jPanel8Layout);
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +177,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -195,7 +197,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -215,7 +217,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,14 +226,15 @@ public class JDialogFilm extends javax.swing.JDialog {
 
         getContentPane().add(jPanel11);
 
-        jLabelSynopsis.setText("jLabel2");
-        getContentPane().add(jLabelSynopsis);
+        jScrollPane2.setViewportView(jTextPaneSynopsis);
+
+        getContentPane().add(jScrollPane2);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +247,7 @@ public class JDialogFilm extends javax.swing.JDialog {
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 133, Short.MAX_VALUE)
+            .addGap(0, 233, Short.MAX_VALUE)
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -254,10 +257,21 @@ public class JDialogFilm extends javax.swing.JDialog {
         getContentPane().add(jPanel4);
 
         jButton1.setText("Ajouter un Lien");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         getContentPane().add(jButton1);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        JDialogLien jdl = new JDialogLien(null, true);
+
+        jdl.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -314,7 +328,6 @@ public class JDialogFilm extends javax.swing.JDialog {
     private javax.swing.JLabel jLabelGenre;
     private javax.swing.JLabel jLabelId;
     private javax.swing.JLabel jLabelPays;
-    private javax.swing.JLabel jLabelSynopsis;
     private javax.swing.JLabel jLabelTitre;
     private javax.swing.JLabel jLabelTitreFilm;
     private javax.swing.JPanel jPanel1;
@@ -327,5 +340,7 @@ public class JDialogFilm extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTextPane jTextPaneSynopsis;
     // End of variables declaration//GEN-END:variables
 }
