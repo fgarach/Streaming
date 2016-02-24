@@ -6,6 +6,7 @@
 package streaming.swing;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import streaming.service.GenreService;
 
 /**
@@ -14,8 +15,8 @@ import streaming.service.GenreService;
  */
 public class JPanelListGenre extends javax.swing.JPanel {
     
-
-    private GenreService gServ = new GenreService();
+    @Autowired
+    private GenreService gServ;
     
     public void rafraichiJTable(){
         

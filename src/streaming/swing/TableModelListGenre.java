@@ -20,8 +20,8 @@ public class TableModelListGenre extends DefaultTableModel{
     private List<Genre> genre = null;
     private int nbGenre = 0;
     
-
-    private GenreService gServ = new GenreService();
+    @Autowired
+    private GenreService gServ;
     
     public TableModelListGenre(){
 
