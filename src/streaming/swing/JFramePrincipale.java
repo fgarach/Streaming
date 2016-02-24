@@ -7,11 +7,15 @@ package streaming.swing;
 
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author admin
  */
+@Component
 public class JFramePrincipale extends javax.swing.JFrame {
 
     private JPanel jpCentral = null;
@@ -196,9 +200,14 @@ public class JFramePrincipale extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                JFramePrincipale jfp = new JFramePrincipale();
-                jfp.setSize(800, 600);
-                jfp.setVisible(true);
+                ApplicationContext context = new FileSystemXmlApplicationContext("file:/C:\\Users\\admin\\Documents\\NetBeansProjects\\Streaming\\application-context.xml");
+                context.getBean(JFramePrincipale.class).setSize(800, 600);
+                context.getBean(JFramePrincipale.class).setVisible(true);
+                
+                
+                //JFramePrincipale jfp = new JFramePrincipale();
+                //jfp.setSize(800, 600);
+                //jfp.setVisible(true);
             }
         });
     }
