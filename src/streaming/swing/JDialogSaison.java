@@ -26,8 +26,12 @@ public class JDialogSaison extends javax.swing.JDialog {
     
      public void rafraichirListSerieSaison() {
         listSerie = seServ.listerTous();
-        listSaison = saServ.listerTous();
-    }
+        for (Serie s : listSerie) {
+            if (s.getTitre().equals(jComboBoxSerie.getSelectedItem())) {
+            List<Saison> listSaison = s.getSaisonDeLaSerie();
+            }
+        }
+     }
      
     public void initialiserComboBoxSerie() {
 
@@ -45,6 +49,7 @@ public class JDialogSaison extends javax.swing.JDialog {
         this.jpls=jpls;
         rafraichirListSerieSaison();
         initialiserComboBoxSerie();
+        
     }
 
     /**
