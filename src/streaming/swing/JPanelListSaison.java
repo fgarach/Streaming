@@ -6,12 +6,14 @@
 package streaming.swing;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.service.SaisonService;
 
 /**
  *
  * @author admin
  */
+@Component
 public class JPanelListSaison extends javax.swing.JPanel {
     
     @Autowired

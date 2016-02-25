@@ -134,7 +134,7 @@ public class JDialogGenre extends javax.swing.JDialog {
         genre.setNom(jTextFieldNom.getText());
         gServ.ajouter(genre);
         
-        this.jplg.rafraichiJTable();
+        this.jplg.rafraichitJTable();
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

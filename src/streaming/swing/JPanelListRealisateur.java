@@ -37,7 +37,7 @@ public class JPanelListRealisateur extends javax.swing.JPanel {
      */
     public JPanelListRealisateur() {
         initComponents();
-        rafraichitJTable();
+     
     }
 
     /**

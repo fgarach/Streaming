@@ -22,7 +22,7 @@ public class JPanelListGenre extends javax.swing.JPanel {
     
     private TableModelListGenre tableModelListGenre;
     
-    public void rafraichiJTable(){
+    public void rafraichitJTable(){
         tableModelListGenre.rafraichir();
         jTableGenre.setModel(tableModelListGenre);
         jTableGenre.repaint();
@@ -111,7 +111,7 @@ public class JPanelListGenre extends javax.swing.JPanel {
         long Id = (long) jTableGenre.getValueAt(i,0);
         gServ.supprimer(Id);
         
-        rafraichiJTable();
+        rafraichitJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

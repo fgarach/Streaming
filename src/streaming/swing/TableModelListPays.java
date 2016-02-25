@@ -6,8 +6,6 @@
 package streaming.swing;
 
 import java.util.List;
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
 import javax.swing.table.DefaultTableModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;

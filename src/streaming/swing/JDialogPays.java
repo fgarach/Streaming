@@ -142,7 +142,7 @@ public class JDialogPays extends javax.swing.JDialog {
         pays.setNom(jTextFieldTitre.getText());
         pServ.ajouter(pays);
         
-        this.jplp.rafraichiJTable();
+        this.jplp.rafraichitJTable();
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

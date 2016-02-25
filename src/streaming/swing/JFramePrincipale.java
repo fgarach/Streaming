@@ -160,7 +160,6 @@ public class JFramePrincipale extends javax.swing.JFrame {
         jpCentral = jPanelListFilm;
         
         add(jpCentral, BorderLayout.CENTER);
-        
         jPanelListFilm.rafraichitJTable();
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -169,30 +168,35 @@ public class JFramePrincipale extends javax.swing.JFrame {
         supprimePanneaux();
         jpCentral =  jPanelListGenre;
         add(jpCentral, BorderLayout.CENTER);
+        jPanelListGenre.rafraichitJTable();
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         supprimePanneaux();
         jpCentral = jPanelListPays;
         add(jpCentral, BorderLayout.CENTER);
+        jPanelListPays.rafraichitJTable();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         supprimePanneaux();
         jpCentral = jPanelListSerie;
         add(jpCentral, BorderLayout.CENTER);
+        jPanelListSerie.rafraichiJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         supprimePanneaux();
         jpCentral = jPanelListRealisateur;
         add(jpCentral, BorderLayout.CENTER);
+        jPanelListRealisateur.rafraichitJTable();
     }//GEN-LAST:event_jButton5ActionPerformed
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
         supprimePanneaux();
         jpCentral = jPanelListSaison;
         add(jpCentral, BorderLayout.CENTER);
+        jPanelListSaison.rafraichiJTable();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**

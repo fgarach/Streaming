@@ -22,7 +22,7 @@ public class JPanelListPays extends javax.swing.JPanel {
     @Autowired
     private TableModelListPays tableModelListPays;
     
-    public void rafraichiJTable(){
+    public void rafraichitJTable(){
         tableModelListPays.rafraichir();
         jTablePays.setModel(tableModelListPays);
         jTablePays.repaint();
@@ -110,7 +110,7 @@ public class JPanelListPays extends javax.swing.JPanel {
         long Id = (long) jTablePays.getValueAt(i,0);
         pServ.supprimer(Id);
         
-        rafraichiJTable();
+        rafraichitJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 

@@ -5,22 +5,26 @@
  */
 package streaming.swing;
 
-import javax.swing.JTable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.service.SerieService;
 
 /**
  *
  * @author admin
  */
+@Component
 public class JPanelListSerie extends javax.swing.JPanel {
-    
+
     @Autowired
     private SerieService sServ;
 
-    public void rafraichiJTable() {
+    @Autowired
+    private TableModelListSerie tmListeSerie;
 
-        jTableSerie.setModel(new TableModelListSerie());
+    public void rafraichiJTable() {
+        tmListeSerie.rafraichir();
+        jTableSerie.setModel(tmListeSerie);
         jTableSerie.repaint();
     }
 
@@ -29,7 +33,7 @@ public class JPanelListSerie extends javax.swing.JPanel {
      */
     public JPanelListSerie() {
         initComponents();
-        rafraichiJTable();
+
     }
 
     /**
