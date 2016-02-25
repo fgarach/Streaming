@@ -25,6 +25,7 @@ public class JPanelListSaison extends javax.swing.JPanel {
     public void rafraichitJTable(){
         tmListSaison.rafraichir();
         jTableSaison.setModel(tmListSaison);
+        jTableSaison.validate();
         jTableSaison.repaint();
     }
 
