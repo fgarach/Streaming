@@ -22,6 +22,9 @@ public class JPanelListPays extends javax.swing.JPanel {
     @Autowired
     private TableModelListPays tableModelListPays;
     
+    @Autowired
+    private JDialogPays jDialogPays;
+    
     public void rafraichitJTable(){
         tableModelListPays.rafraichir();
         jTablePays.setModel(tableModelListPays);
@@ -95,8 +98,8 @@ public class JPanelListPays extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JDialogPays dialog = new JDialogPays(null, true,this);
-        
+        JDialogPays dialog = jDialogPays;
+        jDialogPays.rafraichir();
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 

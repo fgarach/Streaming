@@ -6,7 +6,9 @@
 package streaming.swing;
 
 
+import javax.swing.JFrame;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.entity.Genre;
 import streaming.service.GenreService;
 
@@ -14,25 +16,45 @@ import streaming.service.GenreService;
  *
  * @author admin
  */
+@Component
 public class JDialogGenre extends javax.swing.JDialog {
     
     @Autowired
     private GenreService gServ;
+    @Autowired
     private JPanelListGenre jplg;
-    
-    public JDialogGenre(java.awt.Frame parent, boolean modal, JPanelListGenre jplg) {
-        super(parent, modal);
-        initComponents();
-        this.jplg=jplg;
+
+    public void setJplg(JPanelListGenre jplg) {
+        this.jplg = jplg;
     }
+    
+      public void rafraichir(){
+       this.setJplg(jplg);
+                
+    }
+    
+     public JDialogGenre() {
+        setModal(true);
+        initComponents();
+     }
+     
+   
+
+
+    
+//    public JDialogGenre(java.awt.Frame parent, boolean modal, JPanelListGenre jplg) {
+//        super(parent, modal);
+//        initComponents();
+//        this.jplg=jplg;
+//    }
 
     /**
      * Creates new form JDialogGenre
      */
-    public JDialogGenre(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-        initComponents();
-    }
+//    public JDialogGenre(java.awt.Frame parent, boolean modal) {
+//        super(parent, modal);
+//        initComponents();
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -142,44 +164,7 @@ public class JDialogGenre extends javax.swing.JDialog {
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDialogGenre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDialogGenre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDialogGenre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDialogGenre.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JDialogGenre dialog = new JDialogGenre(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

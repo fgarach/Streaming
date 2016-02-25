@@ -18,7 +18,7 @@ public class JDialogEditRealisateur extends javax.swing.JDialog {
 
     @Autowired
     private RealisateurService rServ;
-
+    @Autowired
     private JPanelListRealisateur jplr;
 
     /**

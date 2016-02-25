@@ -23,6 +23,9 @@ public class JPanelListGenre extends javax.swing.JPanel {
     @Autowired
     private TableModelListGenre tableModelListGenre;
     
+    @Autowired
+    private JDialogGenre jDialogGenre;
+    
     public void rafraichitJTable(){
         tableModelListGenre.rafraichir();
         jTableGenre.setModel(tableModelListGenre);
@@ -98,8 +101,8 @@ public class JPanelListGenre extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        JDialogGenre dialog = new JDialogGenre(null, true,this);
-        
+        JDialogGenre dialog = jDialogGenre;
+        jDialogGenre.rafraichir();
         dialog.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
