@@ -196,7 +196,7 @@ public class JFramePrincipale extends javax.swing.JFrame {
         supprimePanneaux();
         jpCentral = jPanelListSaison;
         add(jpCentral, BorderLayout.CENTER);
-        jPanelListSaison.rafraichiJTable();
+        jPanelListSaison.rafraichitJTable();
     }//GEN-LAST:event_jButton8ActionPerformed
 
     /**

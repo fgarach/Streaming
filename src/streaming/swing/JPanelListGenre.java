@@ -20,6 +20,7 @@ public class JPanelListGenre extends javax.swing.JPanel {
     @Autowired
     private GenreService gServ;
     
+    @Autowired
     private TableModelListGenre tableModelListGenre;
     
     public void rafraichitJTable(){

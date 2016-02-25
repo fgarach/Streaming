@@ -205,7 +205,7 @@ public class JDialogSaison extends javax.swing.JDialog {
         saServ.ajouter(saison);
         
         
-        this.jpls.rafraichiJTable();
+        this.jpls.rafraichitJTable();
         this.setVisible(false);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed

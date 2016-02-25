@@ -19,9 +19,12 @@ public class JPanelListSaison extends javax.swing.JPanel {
     @Autowired
     private SaisonService sServ ;
     
-    public void rafraichiJTable(){
-        
-        jTableSaison.setModel(new TableModelListSaison());
+    @Autowired
+    private TableModelListSaison tmListSaison;
+    
+    public void rafraichitJTable(){
+        tmListSaison.rafraichir();
+        jTableSaison.setModel(tmListSaison);
         jTableSaison.repaint();
     }
 
@@ -30,7 +33,6 @@ public class JPanelListSaison extends javax.swing.JPanel {
      */
     public JPanelListSaison() {
         initComponents();
-        rafraichiJTable();
     }
 
     /**
@@ -107,7 +109,7 @@ public class JPanelListSaison extends javax.swing.JPanel {
         long Id = (long) jTableSaison.getValueAt(i,0);
         sServ.supprimer(Id);
         
-        rafraichiJTable();
+        rafraichitJTable();
     }//GEN-LAST:event_jButton2ActionPerformed
 
 
