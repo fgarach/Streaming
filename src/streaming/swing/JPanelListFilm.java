@@ -26,11 +26,15 @@ public class JPanelListFilm extends javax.swing.JPanel {
     
     @Autowired
     private FilmService fServ;
+    
+    @Autowired
+    private JDialogEditFilm jdialogEditFilm;
 
     public void rafraichitJTable() {
         
         tmListeFilm.rafraichir();
         jTableListFilm.setModel(tmListeFilm);
+        jTableListFilm.revalidate();
         jTableListFilm.repaint();
     }
 
@@ -107,9 +111,11 @@ public class JPanelListFilm extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonNouveauFilmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonNouveauFilmActionPerformed
-        JDialogEditFilm jdg = new JDialogEditFilm(null, true, this);
-
-        jdg.setVisible(true);
+        jdialogEditFilm.setJplf(this);
+        jdialogEditFilm.initialiser();
+        jdialogEditFilm.setVisible(true);
+        
+        this.rafraichitJTable();
     }//GEN-LAST:event_jButtonNouveauFilmActionPerformed
 
     private void jButtonSupprimerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSupprimerActionPerformed

@@ -28,6 +28,7 @@ public class JPanelListPays extends javax.swing.JPanel {
     public void rafraichitJTable(){
         tableModelListPays.rafraichir();
         jTablePays.setModel(tableModelListPays);
+        jTablePays.revalidate();
         jTablePays.repaint();
     }
 

@@ -8,6 +8,7 @@ package streaming.swing;
 import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import streaming.entity.Film;
 import streaming.entity.Genre;
@@ -22,6 +23,7 @@ import streaming.service.PaysService;
  * @author admin
  */
 
+@Component
 public class JDialogEditFilm extends javax.swing.JDialog {
 
     @Autowired
@@ -34,8 +36,14 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     private List<Genre> listGenre = new ArrayList<Genre>();
     private List<Pays> listPays = new ArrayList<Pays>();
     
-    
+    @Autowired
     private JPanelListFilm jplf;
+
+    public void setJplf(JPanelListFilm jplf) {
+        this.jplf = jplf;
+    }
+
+
 
     public void rafraichirListPaysGenre() {
         listPays = pServ.listerTous();
@@ -64,23 +72,20 @@ public class JDialogEditFilm extends javax.swing.JDialog {
     /**
      * Creates new form JDialogEditFilm
      */
-    public JDialogEditFilm(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
+    public JDialogEditFilm() {
+        this.setModal(true);
         initComponents();
-        initialiserComboBoxPays();
-        initialiserComboBoxGenre();
     }
-
-    public JDialogEditFilm(java.awt.Frame parent, boolean modal, JPanelListFilm jplf) {
-        super(parent, modal);
-        initComponents();
+    
+    
+    public void initialiser(){
         rafraichirListPaysGenre();
         initialiserComboBoxPays();
         initialiserComboBoxGenre();
-
-        this.jplf = jplf;
     }
-
+    
+ 
+ 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -302,47 +307,7 @@ public class JDialogEditFilm extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_jComboBoxPaysActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JDialogEditFilm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JDialogEditFilm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JDialogEditFilm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JDialogEditFilm.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
 
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                JDialogEditFilm dialog = new JDialogEditFilm(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonAjouter;

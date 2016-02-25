@@ -21,6 +21,9 @@ public class JPanelListRealisateur extends javax.swing.JPanel {
     @Autowired
     private TableModelListRealisateur tmListeRealisateur;
     
+    @Autowired
+    private JDialogEditRealisateur jDialogEditRealisateur;
+    
     
     
     @Autowired
@@ -29,6 +32,7 @@ public class JPanelListRealisateur extends javax.swing.JPanel {
     public void rafraichitJTable() {
         tmListeRealisateur.rafraichir();
         jTableRealisateur.setModel(tmListeRealisateur);
+        jTableRealisateur.revalidate();
         jTableRealisateur.repaint();
     }
 
@@ -112,8 +116,10 @@ public class JPanelListRealisateur extends javax.swing.JPanel {
     }//GEN-LAST:event_jButtonSupprimerActionPerformed
 
     private void jButtonAjouterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonAjouterActionPerformed
-        JDialogEditRealisateur jdg = new JDialogEditRealisateur(null, true,this);
-        jdg.setVisible(true);
+        jDialogEditRealisateur.setJplr(this);
+        jDialogEditRealisateur.setVisible(true);
+        
+        this.rafraichitJTable();
     }//GEN-LAST:event_jButtonAjouterActionPerformed
 
 

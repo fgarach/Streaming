@@ -26,9 +26,10 @@ public class TableModelListGenre extends DefaultTableModel{
     private GenreService gServ;
     
      public void rafraichir(){
+    
         genre = gServ.listerTous();
-
         nbGenre = genre.size();
+       
     }
     
     public TableModelListGenre(){
