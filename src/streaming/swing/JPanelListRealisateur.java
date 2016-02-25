@@ -7,6 +7,7 @@ package streaming.swing;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.entity.Realisateur;
 import streaming.service.RealisateurService;
 
@@ -14,15 +15,19 @@ import streaming.service.RealisateurService;
  *
  * @author admin
  */
+@Component
 public class JPanelListRealisateur extends javax.swing.JPanel {
 
-    private TableModelListRealisateur tmListeRealisateur = null;
+    @Autowired
+    private TableModelListRealisateur tmListeRealisateur;
+    
+    
     
     @Autowired
     private RealisateurService rServ;
 
     public void rafraichitJTable() {
-        tmListeRealisateur = new TableModelListRealisateur();
+        tmListeRealisateur.rafraichir();
         jTableRealisateur.setModel(tmListeRealisateur);
         jTableRealisateur.repaint();
     }

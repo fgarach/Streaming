@@ -19,39 +19,39 @@ import streaming.service.PaysService;
  * @author admin
  */
 @Component
-public class TableModelListPays extends DefaultTableModel{
-    
+public class TableModelListPays extends DefaultTableModel {
+
     private List<Pays> pays = null;
     private int nbPays = 0;
     @Autowired
     private PaysService pServ;
-    
-    
-    public TableModelListPays(){
 
-        setColumnIdentifiers(new String[]{"ID","Pays"});
+    public void rafraichir() {
         pays = pServ.listerTous();
         nbPays = pays.size();
-        
     }
-    
+
+    public TableModelListPays() {
+
+        setColumnIdentifiers(new String[]{"ID", "Pays"});
+
+    }
+
     @Override
     public int getRowCount() {
-        return nbPays; 
+        return nbPays;
     }
-    
-    
-    
+
     @Override
-    public Object getValueAt(int row, int column){
+    public Object getValueAt(int row, int column) {
         Pays p = pays.get(row);
-        if (column==0){
+        if (column == 0) {
             return p.getId();
         }
-        if (column==1){
+        if (column == 1) {
             return p.getNom();
         }
         return "***ERREUR****";
-            
+
     }
 }

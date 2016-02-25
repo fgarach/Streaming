@@ -7,19 +7,24 @@ package streaming.swing;
 
 import javax.swing.JDialog;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 import streaming.service.PaysService;
 
 /**
  *
  * @author admin
  */
+@Component
 public class JPanelListPays extends javax.swing.JPanel {
     @Autowired
     private PaysService pServ;
     
+    @Autowired
+    private TableModelListPays tableModelListPays;
+    
     public void rafraichiJTable(){
-        
-        jTablePays.setModel(new TableModelListPays());
+        tableModelListPays.rafraichir();
+        jTablePays.setModel(tableModelListPays);
         jTablePays.repaint();
     }
 
@@ -28,7 +33,7 @@ public class JPanelListPays extends javax.swing.JPanel {
      */
     public JPanelListPays() {
         initComponents();
-        rafraichiJTable();
+        
     }
 
     /**
